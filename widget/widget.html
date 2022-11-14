@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="styles.css">
+    <title>Widget</title>
+</head>
+<body>
+    <div class="dcs_main_container" id="dcs_main_container">
+        <div class="dcs_header_box" id="dcs_header_box">
+            <div class="dcs_header" id="dcs_header">
+            <div class="dcs_search" id="dcs_search">
+                <div class="dcs_search_box" id="dcs_search_box">
+                    <input class="dcs_search_input" id="dcs_search_input" type="text" placeholder="Enter your address">
+                    <button class="dcs_search_btn" id="dcs_search_btn" type="submit">
+                        <div class="dcs_search_icon" id="dcs_search_icon"></div>
+                    </button>
+                </div>
+            </div>
+            <div class="dcs_info" id="dcs_info">
+                <div class="dcs_dropdown" id="dcs_dropdown">
+                    <div class="dcs_btn" id="dcs_btn">
+                        <div class="dcs_button_content" id="dcs_button_content">
+                            <button class="dcs_dropdown_toggle" id="dcs_dropdown_toggle" type="button"  
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sort daycares by</button>
+                            <div class="dcs_arrow" id="dcs_arrow"></div>
+                        </div>
+                    </div>
+                    <div class="dcs_dropdown_menu" id="dcs_dropdown_menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dcs_dropdown_item" id="dcs_dropdown_item" href="#">Rating (default)</a>
+                      <a class="dcs_dropdown_item" id="dcs_dropdown_item" href="#">Wait time</a>
+                      <a class="dcs_dropdown_item" id="dcs_dropdown_item" href="#">Near me</a>
+                    </div>
+                </div>
+                <div class="dcs_search_filters" id="dcs_search_filters">
+                    <button class="dcr_filters_icon" id="dcr_filters_icon" onclick="openFilters()"></button>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="dcs_filters" id="dcs_filters" id="dcs_filters">
+            <div class="dcs_filters_component" id="dcs_filters_component">
+                <h1 class="dcs_title" id="dcs_title">Search filters:</h1>
+                <div class="dcs_filters_group" id="dcs_filters_group">
+                    <div class="dcs_filter" id="dcs_filter">
+                        <h1 class="dcs_filter_title" id="dcs_filter_title">Only show daycares that offer:</h1>
+                        <div class="dcs_checkbox_group" id="dcs_checkbox_group">
+                            <div class="dcs_input_container" id="dcs_input_container">
+                                <div class="dcs_checkbox_wrapper_23 checkbox-wrapper-23" id="dcs_checkbox-wrapper-1">
+                                    <input type="checkbox" id="check-23" class="dcs_checkbox" id="dcs_checkbox_1"/>
+                                    <label for="check-23" style="--size: 30px" class="dcs_checkbox_label" id="dcs_checkbox_title_1">
+                                      <svg viewBox="0,0,50,50">
+                                        <path d="M5 30 L 20 45 L 45 5"></path>
+                                      </svg>
+                                    </label>
+                                </div>
+                                <label class="dcs_container_label" id="dcs_container_label_1" for="checkmark">24 hour care</label>
+                            </div>
+                            <div class="dcs_input_container dcs_input_container_last" id="dcs_input_container_last">
+                                <div class="dcs_checkbox_wrapper_23 checkbox-wrapper-23" id="dcs_checkbox-wrapper-2">
+                                    <input type="checkbox" itemid="dcs_checkbox" id="dcs_checkbox_2"/>
+                                    <label for="check-23" style="--size: 30px" class="dcs_checkbox_label" id="dcs_checkbox_title_2">
+                                      <svg viewBox="0,0,50,50">
+                                        <path d="M5 30 L 20 45 L 45 5"></path>
+                                      </svg>
+                                    </label>
+                                </div>
+                                <label class="dcs_container_label" id="dcs_container_label_2" for="checkmark">Extended hour care</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dcs_filter" id="dcs_filter">
+                        <h1 class="dcs_filter_title" id="dcs_filter_title">Only show daycares that speak:</h1>
+                        <div class="dcs_filter_input" id="dcs_filter_input">
+                            <input class="dcs_filter_textfield" id="dcs_filter_textfield" type="text" placeholder="Language">
+                            <button class="dcs_input_icon" id="dcs_input_icon">
+                                <div class="dcs_icon_elemenyt" id="dcs_icon_elemenyt"></div>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="dcs_filter" id="dcs_filter_1">
+                        <h1 class="dcs_filter_title" id="dcs_filter_title_1">Only show daycares that offer:</h1>
+                        <div class="dcs_filter_input dcs_filter_input_text" id="dcs_filter_input_text_1">
+                            <input class="dcs_input_text_field" id="dcs_input_text_field_1" type="text" placeholder="00">
+                            <h1 class="dcs_separat" id="dcs_separat_1">:</h1>
+                            <input class="dcs_input_text_field" id="dcs_input_text_field_1" type="text" placeholder="00">
+                        </div>
+                    </div>
+                    <div class="dcs_filter" id="dcs_filter_2">
+                        <h1 class="dcs_filter_title" id="dcs_filter_title_2">Only show daycares that close after:</h1>
+                        <div class="dcs_filter_input dcs_filter_input_text" id="dcs_filter_input_text_2">
+                            <input class="dcs_input_text_field" id="dcs_input_text_field_2" type="text" placeholder="00">
+                            <h1 class="dcs_separat" id="dcs_separat_2">:</h1>
+                            <input class="dcs_input_text_field" id="dcs_input_text_field_2" type="text" placeholder="00">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dcs_feed_content" id="dcs_feed_content">
+            <div class="dcs_feed_element feed_recomendations_element" id="dcs_feed_recomendations_1">
+                <!-- 
+                <div class="dcs_element_image" id="dcs_element_image">
+                    <img class="dcs_image" id="dcs_image" src="/images/image.jpg" alt="background">
+                </div>
+                <div class="dcs_element_information" id="dcs_element_information">
+                    <div class="dcs_element_title" id="dcs_element_title">
+                        <h1 class="dcs_title_text" id="dcs_title_text">Jane Doe’s Pretty Daycare</h1>
+                        <div class="dcs_like_icon dcs_like_icon_inactive" id="dcs_like_icon_inactive"></div>
+                    </div>
+                    <div class="dcs_location_info" id="dcs_location_info">
+                        <div class="dcs_location" id="dcs_location">
+                            <div class="dcs_location_icon" id="dcs_location_icon"></div>
+                            <p class="dcs_location_text" id="dcs_location_text">123 Address St.</p>
+                        </div>
+                        <div class="dcs_duration" id="dcs_duration">
+                            <div class="dcs_duration_icon" id="dcs_duration_icon"></div>
+                            <p class="dcs_location_text" id="dcs_location_text">5 min</p>
+                        </div>
+                    </div>
+                    <div class="dcs_rating" id="dcs_rating">
+                        <div class="dcs_stars_rating" id="dcs_stars_rating">
+                            <div class="dcs_star" id="dcs_star"></div>
+                            <div class="dcs_star" id="dcs_star"></div>
+                            <div class="dcs_star" id="dcs_star"></div>
+                            <div class="dcs_star" id="dcs_star"></div>
+                            <div class="dcs_star" id="dcs_star"></div>
+                        </div>
+                        <p class="dcs_comments_rating" id="dcs_comments_rating">(37)</p>
+                    </div>
+                    <div class="dcs_recomended" id="dcs_recomended">
+                        <div class="dcs_thumbs_up_icon" id="dcs_thumbs_up_icon"></div>
+                        <p class="dcs_recomendation_text" id="dcs_recomendation_text">Most recommended for: <span class="dcs_text_span">Cleanliness</span></p>
+                    </div>
+                    <p class="dcs_ranks_text" id="dcs_ranks_text">Ranks in top #5 for cleanliness in this neighborhood</p>
+                    <div class="dcs_offers_element" id="dcs_offers_element">
+                        <div class="dcs_check_icon" id="dcs_check_icon"></div>
+                        <p class="dcs_offers_check" id="dcs_offers_check">Offers 24 hour care</p>
+                    </div>
+                    <div class="dcs_buttons_container" id="dcs_buttons_container">
+                        <button class="dcs_btn_small button_call" id="dcs_button_call" type="button">
+                            <div class="dcs_btn_icon icon_call" id="dcs_icon_call"></div>
+                            Call now
+                        </button>
+                        <button class="dcs_btn_small button_review" id="dcs_button_review" type="button">
+                            <div class="dcs_btn_icon icon_review" id="dcs_icon_review"></div>
+                            Write a review
+                        </button>
+                        <button class="dcs_btn_small button_direction" id="dcs_button_direction" type="button">
+                            <div class="dcs_btn_icon icon_direction" id="dcs_icon_direction"></div>
+                            Get directions
+                        </button>
+                    </div>
+                </div>
+                -->
+                <!-- ////////////////////// RECOMENDATION REVIEW ELEMENT ////////////////////////////////////////////// -->
+                    <div class="dcs_recomend_header" id="dcs_recomend_header">
+                        <div class="dcs_left" id="dcs_left">
+                            <h1 class="dcs_recomend_title" id="dcs_recomend_title">Do you recommend this daycare?</h1>
+                            <div class="dcs_recomend_thumbs" id="dcs_recomend_thumbs">
+                                <div class="dcs_icon icon_thumbs_up" id="dcs_icon_thumbs_up">
+                                    <div class="dcs_recomend_icon thumbs_up" id="dcs_thumbs_up"></div>
+                                    <h1 class="dcs_recomend_text recomend_text_yellow" id="dcs_recomend_text_yellow">Yes</h1>
+                                </div>
+                                <div class="dcs_icon icon_thumbs_down" id="dcs_icon_thumbs_down">
+                                    <div class="dcs_recomend_icon thumbs_down" id="dcs_thumbs_down"></div>
+                                    <h1 class="dcs_recomend_text" id="dcs_recomend_text">No</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dcs_close_icon" id="dcs_close_icon"></div>
+                    </div>
+                    <div class="dcs_review_block" id="dcs_review_block">
+                        <div class="dcs_review_element" id="dcs_review_element">
+                            <p class="dcs_review_title" id="dcs_review_title">Cleanliness</p>
+                            <div class="dcs_review_rating" id="dcs_review_rating">
+                                <div class="dcs_rating_star star_yellow" id="dcs_star_yellow1"></div>
+                                <div class="dcs_rating_star star_yellow" id="dcs_star_yellow2"></div>
+                                <div class="dcs_rating_star star_yellow" id="dcs_star_yellow3"></div>
+                                <div class="dcs_rating_star star_yellow" id="dcs_star_yellow4"></div>
+                                <div class="dcs_rating_star star_yellow" id="dcs_star_yellow5"></div>
+                            </div>
+                        </div>
+                        <div class="dcs_review_element" id="dcs_review_element">
+                            <p class="dcs_review_title" id="dcs_review_title">Staff conduct</p>
+                            <div class="dcs_review_rating" id="dcs_review_rating">
+                                <div class="dcs_rating_star star_yellow" id="dcs_star_yellow1"></div>
+                                <div class="dcs_rating_star star_yellow" id="dcs_star_yellow2"></div>
+                                <div class="dcs_rating_star star_yellow" id="dcs_star_yellow3"></div>
+                                <div class="dcs_rating_star star_yellow"id="dcs_star_yellow4"></div>
+                                <div class="dcs_rating_star star_gray" id="dcs_star_gray1"></div>
+                            </div>
+                        </div>
+                        <div class="dcs_review_element" id="dcs_review_element">
+                            <p class="dcs_review_title" id="dcs_review_title">Sufficient space</p>
+                            <div class="dcs_review_rating" id="dcs_review_rating">
+                                <div class="dcs_rating_star star_yellow" id="dcs_star_yellow1"></div>
+                                <div class="dcs_rating_star star_yellow" id="dcs_star_yellow2"></div>
+                                <div class="dcs_rating_star star_yellow" id="dcs_star_yellow3"></div>
+                                <div class="dcs_rating_star star_gray" id="dcs_star_gray1"></div>
+                                <div class="dcs_rating_star star_gray" id="dcs_star_gray1"></div>
+                            </div>
+                        </div>
+                        <div class="dcs_review_element" id="dcs_review_element">
+                            <p class="dcs_review_title" id="dcs_review_title">Daycare program and activities</p>
+                            <div class="dcs_review_rating" id="dcs_review_rating">
+                                <div class="dcs_rating_star star_yellow" id="dcs_star_yellow1"></div>
+                                <div class="dcs_rating_star star_yellow" id="dcs_star_yellow2"></div>
+                                <div class="dcs_rating_star star_yellow" id="dcs_star_yellow3"></div>
+                                <div class="dcs_rating_star star_yellow" id="dcs_star_yellow4"></div>
+                                <div class="dcs_rating_star star_yellow" id="dcs_star_yellow5"></div>
+                            </div>
+                        </div>
+                        <div class="dcs_review_element" id="dcs_review_element">
+                            <p class="dcs_review_title" id="dcs_review_title">Communication with parents</p>
+                            <div class="dcs_review_rating" id="dcs_review_rating">
+                                <div class="dcs_rating_star star_yellow" id="dcs_star_yellow1"></div>
+                                <div class="dcs_rating_star star_yellow" id="dcs_star_yellow2"></div>
+                                <div class="dcs_rating_star star_yellow" id="dcs_star_yellow3"></div>
+                                <div class="dcs_rating_star star_yellow" id="dcs_star_yellow4"></div>
+                                <div class="dcs_rating_star star_gray" id="star_gray1"></div>
+                            </div>
+                        </div>
+                        <div class="dcs_review_element" id="dcs_review_element">
+                            <p class="dcs_review_title" id="dcs_review_title">Stimulating environment</p>
+                            <div class="dcs_review_rating" id="dcs_review_title">
+                                <div class="dcs_rating_star star_yellow" id="dcs_star_yellow1"></div>
+                                <div class="dcs_rating_star star_yellow" id="dcs_star_yellow2"></div>
+                                <div class="dcs_rating_star star_yellow" id="dcs_star_yellow3"></div>
+                                <div class="dcs_rating_star star_yellow" id="dcs_star_yellow4"></div>
+                                <div class="dcs_rating_star star_yellow" id="dcs_star_yellow5"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dcs_send_button" id="dcs_send_button">
+                        <div class="sent_btn_container" id="sent_btn_container"></div>
+                        <button class="dcs_btn_send" id="dcs_btn_send">Send</button>
+                    </div>
+                <!--  -->
+
+            </div>
+            <div class="dcs_feed_element" id="dcs_feed_element">
+                <div class="dcs_element_image" id="dcs_element_image">
+                    <img class="dcs_image" id="dcs_image" src="/images/camera.png" alt="background">
+                </div>
+                <div class="dcs_element_information" id="dcs_element_information">
+                    <div class="dcs_element_title" id="dcs_element_title">
+                        <h1 class="dcs_title_text" id="dcs_title_text">Jane Doe’s Pretty Daycare</h1>
+                        <div class="dcs_like_icon dcs_like_icon_active" id="dcs_like_icon_active"></div>
+                    </div>
+                    <div class="dcs_location_info" id="dcs_location_info">
+                        <div class="dcs_location" id="dcs_location">
+                            <div class="dcs_location_icon" id="dcs_location_icon"></div>
+                            <p class="dcs_location_text" id="dcs_location_text">123 Address St.</p>
+                        </div>
+                        <div class="dcs_duration" id="dcs_duration">
+                            <div class="dcs_duration_icon" id="dcs_duration_icon"></div>
+                            <p class="dcs_location_text" id="dcs_location_text">5 min</p>
+                        </div>
+                    </div>
+                    <div class="dcs_rating" id="dcs_rating">
+                        <div class="dcs_stars_rating" id="dcs_stars_rating">
+                            <div class="dcs_star" id="dcs_star"></div>
+                            <div class="dcs_star" id="dcs_star"></div>
+                            <div class="dcs_star" id="dcs_star"></div>
+                            <div class="dcs_star" id="dcs_star"></div>
+                            <div class="dcs_star" id="dcs_star"></div>
+                        </div>
+                        <p class="dcs_comments_rating" id="dcs_comments_rating">(37)</p>
+                    </div>
+                    <div class="dcs_recomended" id="dcs_recomended">
+                        <div class="dcs_thumbs_up_icon" id="dcs_thumbs_up_icon"></div>
+                        <p class="dcs_recomendation_text" id="dcs_recomendation_text">Most recommended for: <span class="dcs_text_span">Cleanliness</span></p>
+                    </div>
+                    <p class="dcs_ranks_text" id="dcs_ranks_text">Ranks in top #5 for cleanliness in this neighborhood</p>
+                    <div class="dcs_offers_element" id="dcs_offers_element">
+                        <div class="dcs_check_icon" id="dcs_check_icon"></div>
+                        <p class="dcs_offers_check" id="dcs_offers_check">Offers 24 hour care</p>
+                    </div>
+                    <div class="dcs_buttons_container" id="dcs_buttons_container">
+                        <button class="dcs_btn_small button_call" id="dcs_button_call" type="button">
+                            <div class="dcs_btn_icon icon_call" id="dcs_icon_call"></div>
+                            Call now
+                        </button>
+                        <button class="dcs_btn_small button_review" id="dcs_button_review" type="button">
+                            <div class="dcs_btn_icon icon_review" id="dcs_icon_review"></div>
+                            Write a review
+                        </button>
+                        <button class="dcs_btn_small button_direction" id="dcs_button_direction" type="button">
+                            <div class="dcs_btn_icon icon_direction" id="dcs_icon_direction"></div>
+                            Get directions
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="dcs_feed_element" id="dcs_feed_element">
+                <div class="dcs_element_image" id="dcs_element_image"> 
+                    <img class="dcs_image" id="dcs_image" src="/images/image.jpg" alt="background">
+                </div>
+                <div class="dcs_element_information" id="dcs_element_information">
+                    <div class="dcs_element_title" id="dcs_element_title">
+                        <h1 class="dcs_title_text" id="dcs_title_text">Jane Doe’s Pretty Daycare</h1>
+                        <div class="dcs_like_icon dcs_like_icon_inactive" id="dcs_like_icon_inactive"></div>
+                    </div>
+                    <div class="dcs_location_info" id="dcs_location_info">
+                        <div class="dcs_location" id="dcs_location">
+                            <div class="dcs_location_icon" id="dcs_location_icon"></div>
+                            <p class="dcs_location_text" id="dcs_location_text">123 Address St.</p>
+                        </div>
+                        <div class="dcs_duration" id="dcs_duration">
+                            <div class="dcs_duration_icon" id="dcs_duration_icon"></div>
+                            <p class="dcs_location_text" id="dcs_location_text">5 min</p>
+                        </div>
+                    </div>
+                    <div class="dcs_rating" itemref="dcs_rating">
+                        <div class="dcs_stars_rating" id="dcs_stars_rating">
+                            <div class="dcs_star" id="dcs_star"></div>
+                            <div class="dcs_star" id="dcs_star"></div>
+                            <div class="dcs_star" id="dcs_star"></div>
+                            <div class="dcs_star" id="dcs_star"></div>
+                            <div class="dcs_star" id="dcs_star"></div>
+                        </div>
+                        <p class="dcs_comments_rating" id="dcs_comments_rating">(37)</p>
+                    </div>
+                    <div class="dcs_recomended" id="dcs_recomended">
+                        <div class="dcs_thumbs_up_icon" id="dcs_thumbs_up_icon"></div>
+                        <p class="dcs_recomendation_text" id="dcs_recomendation_text">Most recommended for: <span class="dcs_text_span">Cleanliness</span></p>
+                    </div>
+                    <p class="dcs_ranks_text" id="dcs_ranks_text">Ranks in top #5 for cleanliness in this neighborhood</p>
+                    <div class="dcs_offers_element" id="dcs_offers_element">
+                        <div class="dcs_check_icon" id="dcs_check_icon"></div>
+                        <p class="dcs_offers_check" id="dcs_offers_check">Offers 24 hour care</p>
+                    </div>
+                    <div class="dcs_buttons_container" id="dcs_buttons_container">
+                        <button class="dcs_btn_small button_call" id="dcs_button_call" type="button">
+                            <div class="dcs_btn_icon icon_call" id="dcs_icon_call"></div>
+                            Call now
+                        </button>
+                        <button class="dcs_btn_small button_review" itemid="dcs_button_review" id="dcs_button_review" type="button">
+                            <div class="dcs_btn_icon icon_review" id="dcs_icon_review"></div>
+                            Write a review
+                        </button>
+                        <button class="dcs_btn_small button_direction" id="dcs_button_direction" type="button">
+                            <div class="dcs_btn_icon icon_direction" id="dcs_icon_direction"></div>
+                            Get directions
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="dcs_feed_element" id="dcs_feed_element">
+                <div class="dcs_element_image" id="dcs_element_image">
+                    <img class="dcs_image" id="dcs_image" src="/images/camera.png" alt="background">
+                </div>
+                <div class="dcs_element_information" id="dcs_element_information">
+                    <div class="dcs_element_title" id="dcs_element_title">
+                        <h1 class="dcs_title_text" id="dcs_title_text">Jane Doe’s Pretty Daycare</h1>
+                        <div class="dcs_like_icon dcs_like_icon_active" id="dcs_like_icon_active"></div>
+                    </div>
+                    <div class="dcs_location_info" id="dcs_location_info">
+                        <div class="dcs_location" id="dcs_location">
+                            <div class="dcs_location_icon" id="dcs_location_icon"></div>
+                            <p class="dcs_location_text" id="dcs_location_text">123 Address St.</p>
+                        </div>
+                        <div class="dcs_duration" id="dcs_duration">
+                            <div class="dcs_duration_icon" id="dcs_duration_icon"></div>
+                            <p class="dcs_location_text" id="dcs_location_text">5 min</p>
+                        </div>
+                    </div>
+                    <div class="dcs_rating" id="dcs_rating">
+                        <div class="dcs_stars_rating" id="dcs_stars_rating">
+                            <div class="dcs_star" id="dcs_star"></div>
+                            <div class="dcs_star" id="dcs_star"></div>
+                            <div class="dcs_star" id="dcs_star"></div>
+                            <div class="dcs_star" id="dcs_star"></div>
+                            <div class="dcs_star" id="dcs_star"></div>
+                        </div>
+                        <p class="dcs_comments_rating" id="dcs_comments_rating">(37)</p>
+                    </div>
+                    <div class="dcs_recomended" id="dcs_recomended">
+                        <div class="dcs_thumbs_up_icon" id="dcs_thumbs_up_icon"></div>
+                        <p class="dcs_recomendation_text" id="dcs_recomendation_text">Most recommended for: <span class="dcs_text_span">Cleanliness</span></p>
+                    </div>
+                    <p class="dcs_ranks_text" id="dcs_ranks_text">Ranks in top #5 for cleanliness in this neighborhood</p>
+                    <div class="dcs_offers_element" id="dcs_offers_element">
+                        <div class="dcs_check_icon" id="dcs_check_icon"></div>
+                        <p class="dcs_offers_check" id="dcs_offers_check">Offers 24 hour care</p>
+                    </div>
+                    <div class="dcs_buttons_container" id="dcs_buttons_container">
+                        <button class="dcs_btn_small button_call" id="dcs_button_call" type="button">
+                            <div class="dcs_btn_icon icon_call" id="dcs_icon_call"></div>
+                            Call now
+                        </button>
+                        <button class="dcs_btn_small button_review" id="dcs_button_review" type="button">
+                            <div class="dcs_btn_icon icon_review" id="dcs_icon_review"></div>
+                            Write a review
+                        </button>
+                        <button class="dcs_btn_small button_direction" id="dcs_button_direction" type="button">
+                            <div class="dcs_btn_icon icon_direction" id="dcs_icon_direction"></div>
+                            Get directions
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="dcs_feed_element" id="dcs_feed_element">
+                <div class="dcs_element_image" id="dcs_element_image"> 
+                    <img class="dcs_image" id="dcs_image" src="/images/image.jpg" alt="background">
+                </div>
+                <div class="dcs_element_information" id="dcs_element_information">
+                    <div class="dcs_element_title" id="dcs_element_title">
+                        <h1 class="dcs_title_text" id="dcs_title_text">Jane Doe’s Pretty Daycare</h1>
+                        <div class="dcs_like_icon dcs_like_icon_inactive" id="dcs_like_icon_inactive"></div>
+                    </div>
+                    <div class="dcs_location_info" id="dcs_location_info">
+                        <div class="dcs_location" id="dcs_location">
+                            <div class="dcs_location_icon" id="dcs_location_icon"></div>
+                            <p class="dcs_location_text" id="dcs_location_text">123 Address St.</p>
+                        </div>
+                        <div class="dcs_duration" id="dcs_duration">
+                            <div class="dcs_duration_icon" id="dcs_duration_icon"></div>
+                            <p class="dcs_location_text" id="dcs_location_text">5 min</p>
+                        </div>
+                    </div>
+                    <div class="dcs_rating" itemref="dcs_rating">
+                        <div class="dcs_stars_rating" id="dcs_stars_rating">
+                            <div class="dcs_star" id="dcs_star"></div>
+                            <div class="dcs_star" id="dcs_star"></div>
+                            <div class="dcs_star" id="dcs_star"></div>
+                            <div class="dcs_star" id="dcs_star"></div>
+                            <div class="dcs_star" id="dcs_star"></div>
+                        </div>
+                        <p class="dcs_comments_rating" id="dcs_comments_rating">(37)</p>
+                    </div>
+                    <div class="dcs_recomended" id="dcs_recomended">
+                        <div class="dcs_thumbs_up_icon" id="dcs_thumbs_up_icon"></div>
+                        <p class="dcs_recomendation_text" id="dcs_recomendation_text">Most recommended for: <span class="dcs_text_span">Cleanliness</span></p>
+                    </div>
+                    <p class="dcs_ranks_text" id="dcs_ranks_text">Ranks in top #5 for cleanliness in this neighborhood</p>
+                    <div class="dcs_offers_element" id="dcs_offers_element">
+                        <div class="dcs_check_icon" id="dcs_check_icon"></div>
+                        <p class="dcs_offers_check" id="dcs_offers_check">Offers 24 hour care</p>
+                    </div>
+                    <div class="dcs_buttons_container" id="dcs_buttons_container">
+                        <button class="dcs_btn_small button_call" id="dcs_button_call" type="button">
+                            <div class="dcs_btn_icon icon_call" id="dcs_icon_call"></div>
+                            Call now
+                        </button>
+                        <button class="dcs_btn_small button_review" itemid="dcs_button_review" id="dcs_button_review" type="button">
+                            <div class="dcs_btn_icon icon_review" id="dcs_icon_review"></div>
+                            Write a review
+                        </button>
+                        <button class="dcs_btn_small button_direction" id="dcs_button_direction" type="button">
+                            <div class="dcs_btn_icon icon_direction" id="dcs_icon_direction"></div>
+                            Get directions
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="dcs_feed_element" id="dcs_feed_element">
+                <div class="dcs_element_image" id="dcs_element_image">
+                    <img class="dcs_image" id="dcs_image" src="/images/camera.png" alt="background">
+                </div>
+                <div class="dcs_element_information" id="dcs_element_information">
+                    <div class="dcs_element_title" id="dcs_element_title">
+                        <h1 class="dcs_title_text" id="dcs_title_text">Jane Doe’s Pretty Daycare</h1>
+                        <div class="dcs_like_icon dcs_like_icon_active" id="dcs_like_icon_active"></div>
+                    </div>
+                    <div class="dcs_location_info" id="dcs_location_info">
+                        <div class="dcs_location" id="dcs_location">
+                            <div class="dcs_location_icon" id="dcs_location_icon"></div>
+                            <p class="dcs_location_text" id="dcs_location_text">123 Address St.</p>
+                        </div>
+                        <div class="dcs_duration" id="dcs_duration">
+                            <div class="dcs_duration_icon" id="dcs_duration_icon"></div>
+                            <p class="dcs_location_text" id="dcs_location_text">5 min</p>
+                        </div>
+                    </div>
+                    <div class="dcs_rating" id="dcs_rating">
+                        <div class="dcs_stars_rating" id="dcs_stars_rating">
+                            <div class="dcs_star" id="dcs_star"></div>
+                            <div class="dcs_star" id="dcs_star"></div>
+                            <div class="dcs_star" id="dcs_star"></div>
+                            <div class="dcs_star" id="dcs_star"></div>
+                            <div class="dcs_star" id="dcs_star"></div>
+                        </div>
+                        <p class="dcs_comments_rating" id="dcs_comments_rating">(37)</p>
+                    </div>
+                    <div class="dcs_recomended" id="dcs_recomended">
+                        <div class="dcs_thumbs_up_icon" id="dcs_thumbs_up_icon"></div>
+                        <p class="dcs_recomendation_text" id="dcs_recomendation_text">Most recommended for: <span class="dcs_text_span">Cleanliness</span></p>
+                    </div>
+                    <p class="dcs_ranks_text" id="dcs_ranks_text">Ranks in top #5 for cleanliness in this neighborhood</p>
+                    <div class="dcs_offers_element" id="dcs_offers_element">
+                        <div class="dcs_check_icon" id="dcs_check_icon"></div>
+                        <p class="dcs_offers_check" id="dcs_offers_check">Offers 24 hour care</p>
+                    </div>
+                    <div class="dcs_buttons_container" id="dcs_buttons_container">
+                        <button class="dcs_btn_small button_call" id="dcs_button_call" type="button">
+                            <div class="dcs_btn_icon icon_call" id="dcs_icon_call"></div>
+                            Call now
+                        </button>
+                        <button class="dcs_btn_small button_review" id="dcs_button_review" type="button">
+                            <div class="dcs_btn_icon icon_review" id="dcs_icon_review"></div>
+                            Write a review
+                        </button>
+                        <button class="dcs_btn_small button_direction" id="dcs_button_direction" type="button">
+                            <div class="dcs_btn_icon icon_direction" id="dcs_icon_direction"></div>
+                            Get directions
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="dcs_feed_element" id="dcs_feed_element">
+                <div class="dcs_element_image" id="dcs_element_image"> 
+                    <img class="dcs_image" id="dcs_image" src="/images/image.jpg" alt="background">
+                </div>
+                <div class="dcs_element_information" id="dcs_element_information">
+                    <div class="dcs_element_title" id="dcs_element_title">
+                        <h1 class="dcs_title_text" id="dcs_title_text">Jane Doe’s Pretty Daycare</h1>
+                        <div class="dcs_like_icon dcs_like_icon_inactive" id="dcs_like_icon_inactive"></div>
+                    </div>
+                    <div class="dcs_location_info" id="dcs_location_info">
+                        <div class="dcs_location" id="dcs_location">
+                            <div class="dcs_location_icon" id="dcs_location_icon"></div>
+                            <p class="dcs_location_text" id="dcs_location_text">123 Address St.</p>
+                        </div>
+                        <div class="dcs_duration" id="dcs_duration">
+                            <div class="dcs_duration_icon" id="dcs_duration_icon"></div>
+                            <p class="dcs_location_text" id="dcs_location_text">5 min</p>
+                        </div>
+                    </div>
+                    <div class="dcs_rating" itemref="dcs_rating">
+                        <div class="dcs_stars_rating" id="dcs_stars_rating">
+                            <div class="dcs_star" id="dcs_star"></div>
+                            <div class="dcs_star" id="dcs_star"></div>
+                            <div class="dcs_star" id="dcs_star"></div>
+                            <div class="dcs_star" id="dcs_star"></div>
+                            <div class="dcs_star" id="dcs_star"></div>
+                        </div>
+                        <p class="dcs_comments_rating" id="dcs_comments_rating">(37)</p>
+                    </div>
+                    <div class="dcs_recomended" id="dcs_recomended">
+                        <div class="dcs_thumbs_up_icon" id="dcs_thumbs_up_icon"></div>
+                        <p class="dcs_recomendation_text" id="dcs_recomendation_text">Most recommended for: <span class="dcs_text_span">Cleanliness</span></p>
+                    </div>
+                    <p class="dcs_ranks_text" id="dcs_ranks_text">Ranks in top #5 for cleanliness in this neighborhood</p>
+                    <div class="dcs_offers_element" id="dcs_offers_element">
+                        <div class="dcs_check_icon" id="dcs_check_icon"></div>
+                        <p class="dcs_offers_check" id="dcs_offers_check">Offers 24 hour care</p>
+                    </div>
+                    <div class="dcs_buttons_container" id="dcs_buttons_container">
+                        <button class="dcs_btn_small button_call" id="dcs_button_call" type="button">
+                            <div class="dcs_btn_icon icon_call" id="dcs_icon_call"></div>
+                            Call now
+                        </button>
+                        <button class="dcs_btn_small button_review" itemid="dcs_button_review" id="dcs_button_review" type="button">
+                            <div class="dcs_btn_icon icon_review" id="dcs_icon_review"></div>
+                            Write a review
+                        </button>
+                        <button class="dcs_btn_small button_direction" id="dcs_button_direction" type="button">
+                            <div class="dcs_btn_icon icon_direction" id="dcs_icon_direction"></div>
+                            Get directions
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="dcs_feed_element" id="dcs_feed_element">
+                <div class="dcs_element_image" id="dcs_element_image">
+                    <img class="dcs_image" id="dcs_image" src="/images/camera.png" alt="background">
+                </div>
+                <div class="dcs_element_information" id="dcs_element_information">
+                    <div class="dcs_element_title" id="dcs_element_title">
+                        <h1 class="dcs_title_text" id="dcs_title_text">Jane Doe’s Pretty Daycare</h1>
+                        <div class="dcs_like_icon dcs_like_icon_active" id="dcs_like_icon_active"></div>
+                    </div>
+                    <div class="dcs_location_info" id="dcs_location_info">
+                        <div class="dcs_location" id="dcs_location">
+                            <div class="dcs_location_icon" id="dcs_location_icon"></div>
+                            <p class="dcs_location_text" id="dcs_location_text">123 Address St.</p>
+                        </div>
+                        <div class="dcs_duration" id="dcs_duration">
+                            <div class="dcs_duration_icon" id="dcs_duration_icon"></div>
+                            <p class="dcs_location_text" id="dcs_location_text">5 min</p>
+                        </div>
+                    </div>
+                    <div class="dcs_rating" id="dcs_rating">
+                        <div class="dcs_stars_rating" id="dcs_stars_rating">
+                            <div class="dcs_star" id="dcs_star"></div>
+                            <div class="dcs_star" id="dcs_star"></div>
+                            <div class="dcs_star" id="dcs_star"></div>
+                            <div class="dcs_star" id="dcs_star"></div>
+                            <div class="dcs_star" id="dcs_star"></div>
+                        </div>
+                        <p class="dcs_comments_rating" id="dcs_comments_rating">(37)</p>
+                    </div>
+                    <div class="dcs_recomended" id="dcs_recomended">
+                        <div class="dcs_thumbs_up_icon" id="dcs_thumbs_up_icon"></div>
+                        <p class="dcs_recomendation_text" id="dcs_recomendation_text">Most recommended for: <span class="dcs_text_span">Cleanliness</span></p>
+                    </div>
+                    <p class="dcs_ranks_text" id="dcs_ranks_text">Ranks in top #5 for cleanliness in this neighborhood</p>
+                    <div class="dcs_offers_element" id="dcs_offers_element">
+                        <div class="dcs_check_icon" id="dcs_check_icon"></div>
+                        <p class="dcs_offers_check" id="dcs_offers_check">Offers 24 hour care</p>
+                    </div>
+                    <div class="dcs_buttons_container" id="dcs_buttons_container">
+                        <button class="dcs_btn_small button_call" id="dcs_button_call" type="button">
+                            <div class="dcs_btn_icon icon_call" id="dcs_icon_call"></div>
+                            Call now
+                        </button>
+                        <button class="dcs_btn_small button_review" id="dcs_button_review" type="button">
+                            <div class="dcs_btn_icon icon_review" id="dcs_icon_review"></div>
+                            Write a review
+                        </button>
+                        <button class="dcs_btn_small button_direction" id="dcs_button_direction" type="button">
+                            <div class="dcs_btn_icon icon_direction" id="dcs_icon_direction"></div>
+                            Get directions
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openFilters(){
+            const filters = document.getElementById('dcs_filters');
+            const filters_icon = document.getElementById("dcs_search_filters");
+            filters.className = filters.className === "dcs_filters_inactive" ? "dcs_filters" : "dcs_filters_inactive";
+            if(filters.className === "dcs_filters_active") {
+                filters_icon.className = "drc_filter_icon_inactive"
+            } else {
+                filters_icon.className = "drc_filter_icon"
+            };
+        };
+    </script>
+</body>
+</html>
